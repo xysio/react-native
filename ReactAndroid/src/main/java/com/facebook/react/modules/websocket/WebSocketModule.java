@@ -97,10 +97,10 @@ public final class WebSocketModule extends NativeWebSocketModuleSpec {
 
     Request.Builder builder = new Request.Builder().tag(id).url(url);
 
-    String cookie = getCookie(url);
-    if (cookie != null) {
-      builder.addHeader("Cookie", cookie);
-    }
+    // String cookie = getCookie(url);
+    // if (cookie != null) {
+      // builder.addHeader("Cookie", cookie);
+    // }
 
     if (options != null
         && options.hasKey("headers")
@@ -110,7 +110,7 @@ public final class WebSocketModule extends NativeWebSocketModuleSpec {
       ReadableMapKeySetIterator iterator = headers.keySetIterator();
 
       if (!headers.hasKey("origin")) {
-        builder.addHeader("origin", getDefaultOrigin(url));
+        // builder.addHeader("origin", getDefaultOrigin(url));
       }
 
       while (iterator.hasNextKey()) {
@@ -122,7 +122,7 @@ public final class WebSocketModule extends NativeWebSocketModuleSpec {
         }
       }
     } else {
-      builder.addHeader("origin", getDefaultOrigin(url));
+      // builder.addHeader("origin", getDefaultOrigin(url));
     }
 
     if (protocols != null && protocols.size() > 0) {
